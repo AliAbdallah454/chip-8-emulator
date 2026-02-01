@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -std=c++17 -Wall -Wextra -Wpedantic -O2
+CXXFLAGS := -std=c++17 -O2
 TARGET := app
 SRC := main.cpp Chip8.cpp
 OBJ := $(SRC:.cpp=.o)

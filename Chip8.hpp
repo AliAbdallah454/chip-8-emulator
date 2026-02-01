@@ -1,6 +1,8 @@
 #pragma once
 
 #include <cstdint>
+#include <chrono>
+#include <random>
 
 class Chip8 {
 
@@ -18,7 +20,16 @@ class Chip8 {
         uint32_t video[64 * 32]{};
         uint16_t opcode;
 
+        std::default_random_engine randGen;
+        std::uniform_int_distribution<uint8_t> randByte;
+
         Chip8();
         void LoadROM(char const *filename);
+
+        // Instructions
+        void OP_00E0();
+        void OP_00EE();
+        void OP_1nnn();
+        void OP_2nnn();
 
 };
